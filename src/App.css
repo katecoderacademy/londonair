@@ -1,5 +1,10 @@
+body{
+  overflow: hidden;
+}
+
 .App {
   text-align: center;
+  font-family: 'Lato', sans-serif;
 }
 
 a:link {
@@ -10,33 +15,52 @@ a:link {
 .App {
   background-color: rgb(110, 155, 206);
   min-height: 100vh;
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-areas: "main" "navigation";
+  grid-template-rows: 1fr 100px;
+}
+main {
+  background-color: #F8BBD0;
+  grid-area: main;
+  height: 100%;
+}
+
+navigation {
+  background-color: #7E57C2;
+  grid-area: navigation;
+  
 }
 
 .nav{
   text-decoration: none;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
   justify-content: center;
+  height: 100%;
+  align-self: center;
+  align-content: center;
+
 }
 
-.nav-logo{
+logo{
   grid-column: 2 / 2;
-  height: 30px;
-  padding: 5% 15% 0% 15%;
   align-self: center;
 }
 
 
-.nav-button{
-  height: 30px;
-  padding: 5% 15% 0% 15%;
+.nav button{
+  margin-top: 38px;
+  margin-right: 5px;
+  padding: 0.5em;
   align-self: center;
+  background-color: aquamarine;
 }
 
-
+heading {
+  margin: 15px;
+  font-size: 2rem;
+}
 
 /* 
 .App-logo {

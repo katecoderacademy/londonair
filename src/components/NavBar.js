@@ -2,23 +2,23 @@ import React from "react";
 import { ReactComponent as Logo } from "./logo.svg";
 export function NavBar() {
   return (
-    <nav className="nav" role="navigation">
+    <nav className="nav">
 
 
-      <div className="nav-buttons">
-        <a data-testid="link" href="/">
-          <button>Find a spot</button>
+      <div>
+        <a href="/">
+          <button>Current Report</button>
         </a>
-        <a data-testid="link" href="/Categories">
-          <button>Spots near You</button>
+        <a href="/About">
+          <button>About</button>
         </a>
-        <a data-testid="link-contact" href="/ContactUs">
+        <a href="/ContactUs">
           <button>Contact us</button>
         </a>
       </div>
-      <div className="nav-logo">
+      <logo>
         <Logo height={100}/>
-      </div>
+      </logo>
     </nav>
   );
 }
