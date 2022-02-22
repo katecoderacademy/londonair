@@ -1,5 +1,5 @@
 body{
-  overflow: hidden;
+  /* overflow: hidden; */
 }
 
 .App {
@@ -60,6 +60,13 @@ logo{
 heading {
   margin: 15px;
   font-size: 2rem;
+}
+
+
+.reading {
+  text-align: left;
+  margin: 15px;
+  font-size: 12px;
 }
 
 /* 
