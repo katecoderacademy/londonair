@@ -1,5 +1,8 @@
 import React from "react";
+import AirQuality from "./AirQuality";
 export function HomePage() {
+
+
   return (
     <div>
 
@@ -7,6 +10,7 @@ export function HomePage() {
         London's Daily Air Quality Reading
       </heading>
       <div>
+        <AirQuality></AirQuality>
         <p>
           Sample text
         </p>

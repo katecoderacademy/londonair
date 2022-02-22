@@ -15,6 +15,7 @@ export function About() {
   .then(response => {
     
     console.log('Current Forecast: ', response[0].data.currentForecast[0]);
+    console.log('Current Forecast: ', response);
   });
   
   return (
