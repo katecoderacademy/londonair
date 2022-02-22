@@ -11,14 +11,7 @@ export function HomePage() {
       </heading>
       <div class="reading">
         <AirQuality ></AirQuality>
-        <p>
-          Sample text
-        </p>
-
-
-        <div>
-          Empty Div
-        </div>
+        
       </div>
     </div>
   );
