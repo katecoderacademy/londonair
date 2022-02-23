@@ -18,17 +18,23 @@ a:link {
   display: grid;
   grid-template-areas: "main" "navigation";
   grid-template-rows: 1fr 100px;
+  z-index: -1 !important;
 }
 main {
   background-color: #F8BBD0;
   grid-area: main;
   height: 100%;
+  z-index: -1 !important;
 }
 
 navigation {
   background-color: #7E57C2;
   grid-area: navigation;
-  
+  z-index: 50 !important;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
 }
 
 .nav{
@@ -37,10 +43,11 @@ navigation {
   grid-template-columns: 2fr 1fr;
   grid-template-rows: 1fr;
   justify-content: center;
-  height: 100%;
+  /* z-index: -1 !important;
+  position: relative; */
   align-self: center;
   align-content: center;
-
+  
 }
 
 logo{
