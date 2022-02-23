@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import ReactDOM from 'react-dom'
-import Forecast from './Forecast'
+// import ReactDOM from 'react-dom'
+// import Forecast from './Forecast'
 
 
 	const baseURL = "https://api.tfl.gov.uk/AirQuality";
@@ -20,6 +20,18 @@ import Forecast from './Forecast'
 		});
 	  }, []);
 	
+
+
+
+// 	  var str = "I have a cat, a dog, and a goat.";
+// var mapObj = {
+//    cat:"dog",
+//    dog:"goat",
+//    goat:"cat"
+// };
+// str = str.replace(/cat|dog|goat/gi, function(matched){
+//   return mapObj[matched];
+// });
 
 	  if (!quality) return null;
 	  console.log(quality.forecastText) 
@@ -56,22 +68,22 @@ import Forecast from './Forecast'
 		<div class="forecast">
 		   
 		  
-		  <p>Forecast: {quality.forecastBand}</p>
-		  <img src={(`./${quality.forecastBand}.png`)} alt={(`${quality.forecastBand}`)}/>
+		  <p id='forecast-headline'>Forecast: {quality.forecastBand}</p>
+		  <img src={(`./${quality.forecastBand}.svg`)} alt={(`${quality.forecastBand}`)}/>
 		  
-		  <p>Summary: {quality.forecastSummary}</p>
-		  {/* <Forecast></Forecast> */}
-		  <p>Summary: {forecastSummaryFixed5}</p>
+		  <p id='forecast-summary'>Summary: {quality.forecastSummary}</p>
+		  <p id='forecast-detail'>Detailed: {forecastSummaryFixed5}</p>
+
 		  <description class="n02Band">n02Band: {quality.nO2Band}</description>
-		  <img src={(`./${quality.nO2Band}.png`)} alt={(`${quality.nO2Band}`)}/>
+		  <img src={(`./${quality.nO2Band}.svg`)} alt={(`${quality.nO2Band}`)}/>
 		  <description class="o3Band">o3Band: {quality.o3Band}</description>
-		  <img src={(`./${quality.o3Band}.png`)} alt={(`${quality.o3Band}`)}/>
+		  <img src={(`./${quality.o3Band}.svg`)} alt={(`${quality.o3Band}`)}/>
 		  <description class="pM10Band">pM10Band: {quality.pM10Band}</description>
-		  <img src={(`./${quality.pM10Band}.png`)} alt={(`${quality.pM10Band}`)}/>
+		  <img src={(`./${quality.pM10Band}.svg`)} alt={(`${quality.pM10Band}`)}/>
 		  <description class="pM25Band">pM25Band: {quality.pM25Band}</description>
-		  <img src={(`./${quality.pM25Band}.png`)} alt={(`${quality.pM25Band}`)}/>
+		  <img src={(`./${quality.pM25Band}.svg`)} alt={(`${quality.pM25Band}`)}/>
 		  <description class="pM25Band">sO2Band: {quality.sO2Band}</description>
-		  <img src={(`./${quality.sO2Band}.png`)} alt={(`${quality.sO2Band}`)}/>
+		  <img src={(`./${quality.sO2Band}.svg`)} alt={(`${quality.sO2Band}`)}/>
 		</div>
 	  );
 	}

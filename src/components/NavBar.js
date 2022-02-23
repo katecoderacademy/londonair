@@ -7,11 +7,11 @@ export function NavBar() {
 
       <div>
         <a href="/">
-          <button>Current Report</button>
+          <button>Update</button>
         </a>
-        <a href="/">
+        {/* <a href="/">
           <button>Future Report</button>
-        </a>
+        </a> */}
         <a href="/ContactUs">
           <button>Contact</button>
         </a>

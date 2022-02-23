@@ -21,14 +21,15 @@ a:link {
   z-index: -1 !important;
 }
 main {
-  background-color: #F8BBD0;
+  /* background-color: #F8BBD0; */
   grid-area: main;
   height: 100%;
   z-index: -1 !important;
 }
 
 navigation {
-  background-color: #7E57C2;
+  /* background-color: #7E57C2; */
+  background-color: rgb(110, 155, 206);
   grid-area: navigation;
   z-index: 50 !important;
   position: fixed;
@@ -50,12 +51,6 @@ navigation {
   
 }
 
-logo{
-  grid-column: 2 / 2;
-  align-self: center;
-}
-
-
 .nav button{
   margin-top: 38px;
   margin-right: 5px;
@@ -64,16 +59,39 @@ logo{
   background-color: aquamarine;
 }
 
+logo{
+  grid-column: 2 / 2;
+  align-self: center;
+}
+
 heading {
   margin: 15px;
   font-size: 2rem;
 }
 
-
-.reading {
-  text-align: left;
-  margin: 15px;
+.forecast {
+  margin: auto;
+  text-align: center;
   font-size: 12px;
+  display: grid;
+  align-items: center;
+  width: 90%;
+  grid-template-columns: 1fr 100px;
+  /* grid-template-rows: 1fr; */
+}
+
+#forecast-summary, #forecast-detail, #forecast-headline p {
+  grid-column: 1/3;
+}
+
+.forecast p {
+  grid-column: 1 / 2;
+}
+
+.forecast img{
+  width: 100px;
+  grid-column: 2 / 2;
+  
 }
 
 /* 
