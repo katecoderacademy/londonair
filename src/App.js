@@ -5,7 +5,12 @@ import { About } from "./components/About";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 
+
+
 function App() {
+  
+  
+  
   return (
     <div className="App">
       <body><main><Router>

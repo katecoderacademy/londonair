@@ -15,64 +15,50 @@ export default function App() {
 		axios.get(baseURL).then((response) => {
 		  setQuality(response.data.currentForecast[0]);
 		  console.log(response.data.currentForecast[0])
-		//   forecastSummaryFixed5 = forecastSummaryFixed4
-	
+
 		});
 	  }, []);
 	
-
-
-
-		// 	  var str = "I have a cat, a dog, and a goat.";
-		// var mapObj = {
-		//    cat:"dog",
-		//    dog:"goat",
-		//    goat:"cat"
-		// };
-		// str = str.replace(/cat|dog|goat/gi, function(matched){
-		//   return mapObj[matched];
-		// });
-
-	  if (!quality) return null;
-	  console.log(quality.forecastText) 
-	  if(quality.forecastText != undefined) {
-		var forecastSummaryFixed = quality.forecastText.replace(/&#39;/g, "'");
-		var forecastSummaryFixed2 = forecastSummaryFixed.replace(/&gt;/g, '');
-		var forecastSummaryFixed3 = forecastSummaryFixed2.replace(/&lt;/g, '');
-		var forecastSummaryFixed4 = forecastSummaryFixed3.replace(/br/g, '');
-		var forecastSummaryFixed5 = forecastSummaryFixed4.replace(/\//g, ' ');
-		console.log(forecastSummaryFixed5)	
-		}
 	  
+	let forecastSummaryFixed
+
+		if (!quality) return null;
+		console.log(quality.forecastText) 
+		if(quality.forecastText != undefined) {
+			forecastSummaryFixed = quality.forecastText
+			.replace(/&#39;/g, "'")
+			.replace(/&gt;/g, '')
+			.replace(/&lt;/g, '')
+			.replace(/br/g, '')
+			.replace(/\//g, ' ');
+		  console.log(forecastSummaryFixed)	
+		  }
+
+// 			function Search() {
+// 		const [showResults, setShowResults] = React.useState(false);
+// 		const onClick = () => setShowResults(true);
+// 		return (
+// 			<div>
+// 				<input type="submit" value="Word" onClick={onClick} />
+// 				{showResults ? <Results /> : null}
+// 			</div>
+// 		);
+// 	}
+	  
+// 			const Results = () => (
+// 				<div id="results" className="search-results">
+// 				Some Results
+// 				</div>
+// 			)
+		  
+
+// ReactDOM.render(<Search />, document.querySelector("#container"))
 
 
-			const Search = () => {
-				const [showResults, setShowResults] = React.useState(false)
-				const onClick = () => setShowResults(true)
-				return (
-					<div>
-					<input type="submit" value="Word" onClick={onClick} />
-					{ showResults ? <Results /> : null }
-				</div>
-				)
-			}
-	  
-			const Results = () => (
-				<div id="results" className="search-results">
-				Some Results
-				</div>
-			)
-	
-	  
-	
-	
-	
-	
-	  
-	 
-		
-	
-			ReactDOM.render(<Search />, document.querySelector("#container"))
+
+
+	// const [showed, setShowed] = useState(false);
+
 	return (
 		<div class="forecast">
 		   
@@ -83,7 +69,7 @@ export default function App() {
 		  <img src={(`./${quality.forecastBand}.svg`)} alt={(`${quality.forecastBand}`)}/>
 		  
 		  <p id='forecast-summary'>Summary: {quality.forecastSummary}</p>
-		  <p id='forecast-detail'>Detailed: {forecastSummaryFixed5}</p>
+		  <p id='forecast-detail'>Detailed: {forecastSummaryFixed}</p>
 
 		  <description class="n02Band">n02Band: {quality.nO2Band}</description>
 		  <img src={(`./${quality.nO2Band}.svg`)} alt={(`${quality.nO2Band}`)}/>
