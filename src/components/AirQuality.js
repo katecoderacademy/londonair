@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-// import ReactDOM from 'react-dom'
+import ReactDOM from 'react-dom'
 // import Forecast from './Forecast'
 
 
 	const baseURL = "https://api.tfl.gov.uk/AirQuality";
 
-	export default function App() {
+export default function App() {
 	  const [quality, setQuality] = React.useState(null);
 
   
@@ -23,15 +23,15 @@ import axios from 'axios';
 
 
 
-// 	  var str = "I have a cat, a dog, and a goat.";
-// var mapObj = {
-//    cat:"dog",
-//    dog:"goat",
-//    goat:"cat"
-// };
-// str = str.replace(/cat|dog|goat/gi, function(matched){
-//   return mapObj[matched];
-// });
+		// 	  var str = "I have a cat, a dog, and a goat.";
+		// var mapObj = {
+		//    cat:"dog",
+		//    dog:"goat",
+		//    goat:"cat"
+		// };
+		// str = str.replace(/cat|dog|goat/gi, function(matched){
+		//   return mapObj[matched];
+		// });
 
 	  if (!quality) return null;
 	  console.log(quality.forecastText) 
@@ -42,32 +42,43 @@ import axios from 'axios';
 		var forecastSummaryFixed4 = forecastSummaryFixed3.replace(/br/g, '');
 		var forecastSummaryFixed5 = forecastSummaryFixed4.replace(/\//g, ' ');
 		console.log(forecastSummaryFixed5)	
-	}
+		}
 	  
 
 
-	const FurtherInformation = () => {
-		const [showInfo, setshowInfo] = React.useState(false)
-		const onClick = () => setshowInfo(true)
-		return (
-		  <div onClick={onClick}>
-			{ showInfo ? <Information /> : null }
-		  </div>
-		)
-	  }
+			const Search = () => {
+				const [showResults, setShowResults] = React.useState(false)
+				const onClick = () => setShowResults(true)
+				return (
+					<div>
+					<input type="submit" value="Word" onClick={onClick} />
+					{ showResults ? <Results /> : null }
+				</div>
+				)
+			}
 	  
-	  const Information = () => (
-		<div id="results" className="more-information">
-		  Some Results
-		</div>
-	  )
+			const Results = () => (
+				<div id="results" className="search-results">
+				Some Results
+				</div>
+			)
+	
 	  
-	//   ReactDOM.render(<FurtherInformation />, document.querySelector("#container"))
-
+	
+	
+	
+	
+	  
+	 
+		
+	
+			ReactDOM.render(<Search />, document.querySelector("#container"))
 	return (
 		<div class="forecast">
 		   
-		  
+		   <div id="container">
+    
+    		</div>  
 		  <p id='forecast-headline'>Forecast: {quality.forecastBand}</p>
 		  <img src={(`./${quality.forecastBand}.svg`)} alt={(`${quality.forecastBand}`)}/>
 		  
@@ -86,6 +97,8 @@ import axios from 'axios';
 		  <img src={(`./${quality.sO2Band}.svg`)} alt={(`${quality.sO2Band}`)}/>
 		</div>
 	  );
+	
+	  
 	}
 
 
