@@ -1,21 +1,28 @@
 import React, { useState } from "react";
+import axios from "axios";
 
-export function ContactUs() {
+
+
+
+export function ContactUs() { 
+  axios.all([
+    axios.get('https://api.tfl.gov.uk/AirQuality/'),
+  ])
+  
+  .then(response => {
+    
+    console.log('Current Forecast: ', response[0].data.currentForecast[0]);
+    console.log('Current Forecast: ', response);
+  });
+  
   return (
     <div>
 
-      <heading className="heading">
-        Air Quality Today
+      <heading>About
+          {/* <forecastText></forecastText> */}
       </heading>
       <div>
-        <p className="introduction">
-          
-        </p>
-
-
-        <div className="introduction-buttons">
-          
-        </div>
+        
       </div>
     </div>
   );

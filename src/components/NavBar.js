@@ -9,11 +9,11 @@ export function NavBar() {
         <a href="/">
           <button>Current Report</button>
         </a>
-        <a href="/About">
-          <button>About</button>
+        <a href="/">
+          <button>Future Report</button>
         </a>
         <a href="/ContactUs">
-          <button>Contact us</button>
+          <button>Contact</button>
         </a>
       </div>
       <logo>

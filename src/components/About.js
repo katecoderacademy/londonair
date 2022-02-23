@@ -1,6 +1,6 @@
 import React from "react";
 
-// import axios from 'axios';
+import axios from 'axios';
 
 
 
@@ -8,15 +8,15 @@ import React from "react";
 
 
 export function About() { 
-  // axios.all([
-  //   axios.get('https://api.tfl.gov.uk/AirQuality/'),
-  // ])
+  axios.all([
+    axios.get('https://api.tfl.gov.uk/AirQuality/'),
+  ])
   
-  // .then(response => {
+  .then(response => {
     
-  //   console.log('Current Forecast: ', response[0].data.currentForecast[0]);
-  //   console.log('Current Forecast: ', response);
-  // });
+    console.log('Current Forecast: ', response[0].data.currentForecast[0]);
+    console.log('Current Forecast: ', response);
+  });
   
   return (
     <div>

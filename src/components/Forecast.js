@@ -14,8 +14,7 @@ import ReactDOM from 'react-dom'
 		axios.get(baseURL).then((response) => {
 		  setQuality(response.data.currentForecast[0].forecastText);
 		  console.log(response.data.currentForecast[0].forecastText)
-		//   forecastSummaryFixed5 = forecastSummaryFixed4
-	
+
 		});
 	  }, []);
 	
@@ -27,16 +26,22 @@ import ReactDOM from 'react-dom'
 		var forecastSummaryFixed2 = forecastSummaryFixed.replace(/&gt;/g, '>');
 		var forecastSummaryFixed3 = forecastSummaryFixed2.replace(/&lt;/g, '<');
 		var forecastSummaryFixed4 = forecastSummaryFixed3.replace(/<&lt;>/g, '<');
-		// ReactDOM.render(forecastSummaryFixed4)
+		
 		console.log(forecastSummaryFixed4)	
 	}
 	  
 
+	function fixDOM() {
+		const element = (
+			<p>Forecast: {forecastSummaryFixed4}</p>
+		);
+		ReactDOM.hydrate(element, document.getElementById('forecastSummary'));
 
-	 
+	}
+	setInterval(fixDOM, 1);
 
 	return (
-		<p>Forecast: {forecastSummaryFixed4}</p>
+		<div id='forecastSummary'></div>
 		  );
 	}
 
