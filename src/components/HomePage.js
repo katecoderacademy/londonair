@@ -7,7 +7,7 @@ export function HomePage() {
     <div>
 
       <heading className="heading">
-        London's Air Quality Reading
+        London's Air Quality
       </heading>
       <div>
         <AirQuality ></AirQuality>

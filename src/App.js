@@ -1,7 +1,6 @@
 import { HomePage } from "./components/HomePage";
 import { NavBar } from "./components/NavBar";
-import { ContactUs } from "./components/ContactUs";
-import { About } from "./components/About";
+import { ContactUs } from "./components/ContactForm";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -16,7 +15,6 @@ function App() {
       <body><main><Router>
         <Routes>
           <Route path="/" element={<HomePage />} />
-          <Route path="/About" element={<About />} />
           <Route path="/ContactUs" element={<ContactUs />} />         
         </Routes>
       </Router>
