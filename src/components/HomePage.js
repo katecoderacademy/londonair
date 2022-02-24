@@ -4,7 +4,7 @@ export function HomePage() {
 
 
   return (
-    <div>
+    <div className="view">
 
       <heading className="heading">
         London's Air Quality

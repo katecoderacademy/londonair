@@ -7,9 +7,9 @@ LondonAir provides information about air quality in the city of London, updated 
 
 LondonAir includes the following features;
 
-- Feature 1
-- Feature 2
-- Feature 3
+- Updated information on air quality in London;
+- Further information regarding the measurements including impact on human health;
+- Contact form to contact developer.
 
 
 ## API Access
