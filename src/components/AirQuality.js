@@ -52,7 +52,8 @@ export default function App() {
 		  console.log(forecastSummaryFixed)	
 		  }
 
-
+		  if (!quality) return <div>Loading...</div>;
+		  
 	return (
 		// forecast holds the CSS Grid layout, as the major container for this element 
 		<div class="forecast">
@@ -127,7 +128,8 @@ export default function App() {
 				</div>
 		
 		</div>
-	  );
+	  )
+	  ;
 	
 	  
 	}

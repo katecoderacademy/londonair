@@ -4,6 +4,8 @@ import React, { useState } from "react";
 // much of the below form is courtesy of https://herotofu.com/solutions/guides/react-contact-form
 const FORM_ENDPOINT = "https://public.herotofu.com/v1/8a0b6e90-94b1-11ec-bdf8-dd9c99f898ec"; 
 
+
+// The form seeks to handle two states - when the form is submitted, and what to do when the form is submitted.
 const ContactForm = () => {
   const [submitted, setSubmitted] = useState(false);
   const handleSubmit = () => {
